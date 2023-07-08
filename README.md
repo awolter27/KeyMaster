@@ -28,7 +28,7 @@ Project 4
 - I want the user to be notified at the strength of their passwords are.
 - I would like the user to be able to star or favorite commonly used records.
 - I would like to be able to set notifications to go off when it's time to update a password.
-- I want the user to be able to share records via text or email with who they choose.
+- I want the user to be able to share records with who they choose.
 - I want to implement an autofill feature for commonly used emails and usernames.
 - I would like to expand this application to encompass additional types of records, such as credit cards, bank accounts, passports, driver's licenses, etc.
 
@@ -52,5 +52,6 @@ Project 4
 ![Screenshot 2023-07-08 at 1 15 42 PM](https://github.com/awolter27/KeyMaster/assets/123532540/5a8d6340-ac17-46c4-a849-c15ee5ab806f)
 
 ## Initial ERD
-- ![Screenshot 2023-07-08 at 1 41 10 PM](https://github.com/awolter27/KeyMaster/assets/123532540/89f528a8-f9c3-4d70-9ec6-0f8690f4b80f)
+![Screenshot 2023-07-08 at 2 07 01 PM](https://github.com/awolter27/KeyMaster/assets/123532540/f032abe7-2d4e-47e5-abed-abadf6c5eac2)
+
 
