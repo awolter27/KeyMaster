@@ -1,5 +1,4 @@
 from django.shortcuts import redirect
-from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
@@ -19,8 +18,8 @@ class SignIn(TemplateView):
     template_name = "sign_in.html"
 
 
-class Records(TemplateView):
-    template_name = "records.html"
+class RecordsList(TemplateView):
+    template_name = "records_list.html"
 
 
 class RecordCreate(CreateView):
@@ -31,7 +30,7 @@ class RecordCreate(CreateView):
 
 
 class Record(DetailView):
-    template_name = "record.html"
+    template_name = "record_detail.html"
 
 
 class RecordUpdate(UpdateView):
