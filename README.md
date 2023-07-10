@@ -7,7 +7,7 @@ Project 4
 ## Goal
 - In today's digital landscape, the task of maintaining strong yet unique passwords across multiple platforms can be both challenging and overwhelming. KeyMaster was developed with the intention of addressing this pressing need for secure and convenient password management. Serving as a reliable solution, KeyMaster enables users to securely store their records in a centralized location. By leveraging the capabilities of KeyMaster, users can effortlessly generate complex and unique passwords, eliminating the burden of remembering multiple credentials while significantly enhancing their online security. Through its user-friendly interface and robust security measures, KeyMaster strives to empower individuals to adopt safer password practices and fortify their overall online security posture.
 
-## User Story
+## User Stories
 - As a user, I want to store and manage my passwords in one centralized location.
 - As a user, I want to be able to store all associated information about an account, such as my email, username, password, security questions, security key, etc., in one record.
 - As a user, I want to be able to add, edit, and delete records.
