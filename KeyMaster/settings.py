@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import dj_database_url
+import environ
+
+environ.Env()
+environ.Env.read_env()
 
 from pathlib import Path
 
@@ -24,11 +29,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-&s8_p8gnk+3v&pt)3)51w#&mf@e!gf7&n*jqoo!f23*m7s&r*w"
 
+###########################################################################################
+# When ready, delete line 30 and uncomment out lines 33-36. You may need to edit default="".
+# SECRET_KEY = os.environ.get(
+#     "SECRET_KEY", default="django-insecure-&s8_p8gnk+3v&pt)3)51w#&mf@e!gf7&n*jqoo!f23*m7s&r*w"
+# )
+###########################################################################################
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+###########################################################################################
+# When ready, delete line 40 and uncomment out line 44.
+# DEBUG = "RENDER" not in os.environ
+###########################################################################################
+
 ALLOWED_HOSTS = []
 
+###########################################################################################
+# When ready, uncomment out lines 51-53
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+###########################################################################################
 
 # Application definition
 
@@ -40,12 +63,24 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "main_app",
+    ###########################################################################################
+    # When ready, uncomment out line 68
+    # "corsheaders",
+    ###########################################################################################
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    ##########################################################################################
+    # When ready, uncomment out line 76
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
+    ###########################################################################################
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
+    ##########################################################################################
+    # When ready, uncomment out line 82
+    # "corsheaders.middleware.CorsMiddleware",
+    ###########################################################################################
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -72,10 +107,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "KeyMaster.wsgi.application"
 
+##########################################################################################
+# When ready, uncomment out line 113
+# CORS Settings
+# CORS_ORIGIN_ALLOW_ALL = True
+###########################################################################################
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Local Host
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -83,6 +124,16 @@ DATABASES = {
     }
 }
 
+##########################################################################################
+# When ready, uncomment out lines 130-135
+# Render
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     )
+# }
+##########################################################################################
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -119,7 +170,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "main_app/static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "main_app/static/")]
+
+##########################################################################################
+# When ready, uncomment out lines 177-179
+# if not DEBUG:
+#     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+#     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+##########################################################################################
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
