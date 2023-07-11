@@ -18,7 +18,7 @@ class User(models.Model):
         ordering = ["last_name"]
 
 
-class Records(models.Model):
+class Record(models.Model):
     login_url = models.CharField(max_length=500)
     email = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
@@ -30,7 +30,7 @@ class Records(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "Records:" + self.login_url
+        return "Record:" + self.login_url
 
     class Meta:
         ordering = ["login_url"]

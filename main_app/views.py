@@ -1,9 +1,9 @@
-from django.shortcuts import render
-from django.views.generic.base import TemplateView
+from django.shortcuts import redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
 from django.views import View
-from .models import Records
+from .models import Record
 
 
 class Home(TemplateView):
@@ -21,9 +21,15 @@ class SignIn(TemplateView):
 class RecordsList(TemplateView):
     template_name = "records_list.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        records = Record.objects.all()
+        context["records"] = records
+        return context
+
 
 class RecordCreate(CreateView):
-    model = Records
+    model = Record
     fields = [
         "login_url",
         "email",
@@ -38,11 +44,12 @@ class RecordCreate(CreateView):
 
 
 class RecordDetail(DetailView):
+    model = Record
     template_name = "record_detail.html"
 
 
 class RecordUpdate(UpdateView):
-    model = Records
+    model = Record
     fields = [
         "login_url",
         "email",
@@ -56,7 +63,7 @@ class RecordUpdate(UpdateView):
     success_url = "/records/"
 
 
-# class RecordDelete(DeleteView):
-#     model = Records
-#     template_name = "record_delete.html"
-#     success_url = "/records/"
+class RecordDelete(DeleteView):
+    model = Record
+    template_name = "record_delete.html"
+    success_url = "/records/"

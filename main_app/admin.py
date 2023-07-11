@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Records, User
+from .models import User, Record
 
-admin.site.register(Records)
 admin.site.register(User)
+admin.site.register(Record)
