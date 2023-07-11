@@ -34,4 +34,4 @@ class Record(models.Model):
         return "Record:" + self.login_url
 
     class Meta:
-        ordering = ["login_url"]
+        ordering = ["website"]

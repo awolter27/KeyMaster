@@ -11,11 +11,10 @@ Project 4
 - As a user, I want to store and manage my passwords in one centralized location.
 - As a user, I want to be able to store all associated information about an account, such as my email, username, password, security questions, security key, etc., in one record.
 - As a user, I want to be able to add, edit, and delete records.
-- As a user, I want the ability to search all my records by email, username, or password.
+- As a user, I want the ability to search all my records by website, email, username, or password.
 - As a user, I want my records organized alphabetically.
 - As a user, I want to be able to generate complex and unique passwords.
 - As a user, I expect my private data to be secure and protected.
-- As a user, I want to be able to export my records.
 - As a user, I want this app to be simple and intuitive to use.
 - As a user, I want to be able to access this app anywhere.
 - As a user, I want to be able to use this app with screens of all sizes, including computers, tablets, and phones.
@@ -25,9 +24,11 @@ Project 4
 - I would like the search bar to encompass the entirety of the application.
 - I would like the user to be able to specify how they want their data displayed, such as list or grid.
 - I would like the user to be able to further organize their records into folders.
+- I would like the user to be able to further organize their records into folders.
 - I want the user to be notified at the strength of their passwords are.
 - I would like the user to be able to star or favorite commonly used records.
 - I would like to be able to set notifications to go off when it's time to update a password.
+- I want the user to be able to export their own data.
 - I want the user to be able to share records with who they choose.
 - I want to implement an autofill feature for commonly used emails and usernames.
 - I would like to expand this application to encompass additional types of records, such as credit cards, bank accounts, passports, driver's licenses, etc.
