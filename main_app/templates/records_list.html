@@ -1,8 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'basewnav.html' %}
 {% block title %}Records{% endblock %}
 {% block content %}
 
 <h1>Records</h1>
-{% for record in records %}
+{% for record in rec %}
+<div class="border border-light">
+    <a href="{% url 'record_detail' record.pk %}">
+        <p>{{record.login_url}}</p>
+        <p>{{record.email}}</p>
+        <p>{{record.username}}</p>
+    </a>
+</div>
+{% empty %}
+<p>You don't seem to have any records.</p>
+{% endfor %}
+<div class="d-flex justify-content-center py-5">
+    <a href="{% url 'record_create' %}" class="btn btn-primary">Create A Record</a>
+</div>
 
 {% endblock %}

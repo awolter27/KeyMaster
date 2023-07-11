@@ -23,8 +23,8 @@ class RecordsList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        records = Record.objects.all()
-        context["records"] = records
+        rec = Record.objects.all()
+        context["rec"] = rec
         return context
 
 

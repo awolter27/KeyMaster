@@ -1,7 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'basewnav.html' %}
 {% block title %}Record{% endblock %}
 {% block content %}
 
 <h1>Record</h1>
+<p class="text-center">{{record.username}}</p>
+<p class="text-center">{{record.password}}</p>
 
 {% endblock %}
+
+<div class="d-flex justify-content-center py-5">
+    <a href="{% url 'baseball_card_update' baseballcard.pk %}" class="btn btn-primary me-3">Edit</a>
+    <a href="{% url 'baseball_card_delete' baseballcard.pk %}" class="btn btn-danger ms-3">Delete</a>
+</div>

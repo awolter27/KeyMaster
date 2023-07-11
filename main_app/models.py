@@ -19,6 +19,7 @@ class User(models.Model):
 
 
 class Record(models.Model):
+    website = models.CharField(max_length=50)
     login_url = models.CharField(max_length=500)
     email = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
