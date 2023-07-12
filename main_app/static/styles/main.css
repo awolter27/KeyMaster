@@ -38,6 +38,8 @@ body {
 #home-link,
 #records-list-search,
 #record-detail-link,
+#record-create-link,
+#record-update-link,
 #record-delete-link {
     background-color: rgb(252 198 170);
     color: rgb(69, 51, 103);
@@ -74,4 +76,14 @@ body {
     background-color: rgb(252 198 170);
     border-color: rgb(252 198 170);
     color: rgb(69, 51, 103);
+}
+
+.passwordToggle {
+    cursor: pointer;
+    transition: all;
+}
+
+.passwordToggle:hover {
+    font-size: 1em;
+    font-weight: 400;
 }

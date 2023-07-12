@@ -1,64 +1,71 @@
 {% extends 'basewnav.html' %}
 {% load widget_tweaks %}
+{% load static %}
 {% block title %}Create Record{% endblock %}
 {% block content %}
 
 <h1 class="text-center pt-4 pb-5">Create Record</h1>
-<div class="w-75">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.website.errors }}
-            <label class="pb-3" for="{{ form.website.id_for_label }}">Website</label>
-            {% render_field form.website class="form-control py-2" placeholder="Google" type="text" %}
-        </div>
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.login_url.errors }}
-            <label class="pb-3" for="{{ form.login_url.id_for_label }}">URL</label>
-            {% render_field form.login_url class="form-control py-2" placeholder="https://www.google.com" type="text" %}
-        </div>
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.email.errors }}
-            <label class="pb-3" for="{{ form.email.id_for_label }}">Email</label>
-            {% render_field form.email class="form-control py-2" placeholder="jamie.adler@gmail.com" type="email" %}
-        </div>
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.username.errors }}
-            <label class="pb-3" for="{{ form.username.id_for_label }}">Username</label>
-            {% render_field form.username class="form-control py-2" placeholder="jadler1989" type="text" %}
-        </div>
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.password.errors }}
-            <label class="pb-3" for="{{ form.password.id_for_label }}">Password</label>
-            {% render_field form.password class="form-control py-2" placeholder="dE4@^kSeka#55" type="password" %}
-        </div>
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.security_key.errors }}
-            <label class="pb-3" for="{{ form.security_key.id_for_label }}">Security Key</label>
-            {% render_field form.security_key class="form-control py-2" placeholder="D5^fgjkDSH;.28F8h)_+dasH,g4$;3djdYBef45" type="text" %}
-        </div>
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.security_questions.errors }}
-            <label class="pb-3" for="{{ form.security_questions.id_for_label }}">Security Questions</label>
-            {% render_field form.security_questions class="form-control py-2" placeholder="What is your favorite color? Purple" type="text" %}
-        </div>
-        {{ form.non_field_errors }}
-        <div class="d-flex flex-column fs-5 mb-3">
-            {{ form.notes.errors }}
-            <label class="pb-3" for="{{ form.notes.id_for_label }}">Notes</label>
-            {% render_field form.notes class="form-control py-2" placeholder="I need to update my password in 1 year." type="text" %}
-        </div>
-        <div class="d-flex justify-content-center pt-3">
-            <input type="submit" value="Submit" class="btn px-5" id="record-create-submit" />
-        </div>
-    </form>
+<div class="d-flex justify-content-center">
+    <div class="w-75">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.website.errors }}
+                <label class="pb-3" for="{{ form.website.id_for_label }}">Website</label>
+                {% render_field form.website class="form-control py-2" placeholder="Google" type="text" %}
+            </div>
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.login_url.errors }}
+                <label class="pb-3" for="{{ form.login_url.id_for_label }}">URL</label>
+                {% render_field form.login_url class="form-control py-2" placeholder="https://www.google.com" type="text" %}
+            </div>
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.email.errors }}
+                <label class="pb-3" for="{{ form.email.id_for_label }}">Email</label>
+                {% render_field form.email class="form-control py-2" placeholder="jamie.adler@gmail.com" type="email" %}
+            </div>
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.username.errors }}
+                <label class="pb-3" for="{{ form.username.id_for_label }}">Username</label>
+                {% render_field form.username class="form-control py-2" placeholder="jadler1989" type="text" %}
+            </div>
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.password.errors }}
+                <label class="pb-3" for="{{ form.password.id_for_label }}">Password</label>
+                {% render_field form.password class="form-control py-2" id="passwordInput" placeholder="dE4@^kSeka#55" type="password" %}
+                <div id="passwordHelpBlock" class="form-text text-end text-white passwordToggle">
+                    SHOW
+                </div>
+            </div>
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.security_key.errors }}
+                <label class="pb-3" for="{{ form.security_key.id_for_label }}">Security Key</label>
+                {% render_field form.security_key class="form-control py-2" placeholder="D5^fgjkDSH;.28F8h)_+dasH,g4$;3djdYBef45" type="text" %}
+            </div>
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.security_questions.errors }}
+                <label class="pb-3" for="{{ form.security_questions.id_for_label }}">Security Questions</label>
+                {% render_field form.security_questions class="form-control py-2" placeholder="What is your favorite color? Purple" type="text" %}
+            </div>
+            {{ form.non_field_errors }}
+            <div class="d-flex flex-column fs-5 mb-3">
+                {{ form.notes.errors }}
+                <label class="pb-3" for="{{ form.notes.id_for_label }}">Notes</label>
+                {% render_field form.notes class="form-control py-2" placeholder="I need to update my password in 1 year." type="text" %}
+            </div>
+            <div class="d-flex justify-content-center pt-4 pb-5">
+                <input type="submit" value="Submit" class="btn px-5 me-4" id="record-create-submit" />
+                <a href="/records" class="btn px-5 ms-4" id="record-create-link">Back</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

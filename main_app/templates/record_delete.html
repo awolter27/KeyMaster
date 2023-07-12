@@ -28,7 +28,7 @@
                     {% csrf_token %}
                     <div class="py-4">
                         <input class="btn btn-danger px-5 me-3" type="submit" value="DELETE" />
-                        <a href="/records" class="btn px-5 ms-3" id="record-delete-link">Back</a>
+                        <a href="{% url 'record_detail' record.pk %}" class="btn px-5 ms-3" id="record-delete-link">Back</a>
                     </div>
                 </form>
             </div>
