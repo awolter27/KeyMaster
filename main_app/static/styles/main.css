@@ -35,18 +35,15 @@ body {
     max-width: auto;
 }
 
-#home-link {
-    background-color: rgb(252 198 170);
-    color: rgb(69, 51, 103);
-    width: 50%;
-}
-
-#records-list-search {
+#home-link,
+#records-list-search,
+#record-detail-link {
     background-color: rgb(252 198 170);
     color: rgb(69, 51, 103);
 }
 
-#records-list-card {
+#records-list-card,
+#record-detail-card {
     width: 75%;
 }
 
@@ -55,7 +52,9 @@ body {
     text-decoration: none;
 }
 
-#records-list-website {
+#records-list-website,
+#record-detail-website,
+#records-list-caret {
     color: rgb(69, 51, 103);
 }
 
@@ -67,4 +66,10 @@ body {
     height: 4rem;
     margin-right: 5em;
     width: 4rem;
+}
+
+#record-create-submit {
+    background-color: rgb(252 198 170);
+    border-color: rgb(252 198 170);
+    color: rgb(69, 51, 103);
 }

@@ -4,8 +4,8 @@
 
 <h1 class="text-center pt-3">Records</h1>
 <div class="text-center py-4">
-    <input class="rounded w-25 ps-2 pt-1 pb-2" type="text" placeholder="Search ...">
-    <button class="btn" id="records-list-search" type="submit">Search</button>
+    <input class="rounded w-50 ps-2 pt-1 pb-2" type="text" placeholder="Search ...">
+    <button class="btn px-5" id="records-list-search" type="submit">Search</button>
 </div>
 {% for record in rec %}
 <a id="records-list-link" href="{% url 'record_detail' record.pk %}">
@@ -21,7 +21,7 @@
                     <p class="m-1 text-secondary">{{record.username}}</p>
                 </div>
                 <div>
-                    <p class="pe-5 pb-4 text-secondary">▶</p>
+                    <p class="pe-5 pb-4" id="records-list-caret">▶</p>
                 </div>
             </div>
         </div>

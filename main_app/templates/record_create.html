@@ -2,6 +2,62 @@
 {% block title %}Create Record{% endblock %}
 {% block content %}
 
-<h1>Create Record</h1>
+<h1 class="text-center py-5">Create Record</h1>
+<div class="d-flex justify-content-center">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.website.errors }}
+            <label class="pb-3" for="{{ form.website.id_for_label }}">Website</label>
+            {{ form.website }}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.login_url.errors }}
+            <label class="pb-3" for="{{ form.login_url.id_for_label }}">URL</label>
+            {{ form.login_url }}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.email.errors }}
+            <label class="pb-3" for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.username.errors }}
+            <label class="pb-3" for="{{ form.username.id_for_label }}">Username</label>
+            {{ form.username }}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.password.errors }}
+            <label class="pb-3" for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.security_key.errors }}
+            <label class="pb-3" for="{{ form.security_key.id_for_label }}">Security Key</label>
+            {{ form.security_key }}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.security_questions.errors }}
+            <label class="pb-3" for="{{ form.security_questions.id_for_label }}">Security Questions</label>
+            {{ form.security_questions }}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex flex-column fs-5 mb-3 fieldWrapper">
+            {{ form.notes.errors }}
+            <label class="pb-3" for="{{ form.notes.id_for_label }}">Notes</label>
+            {{ form.notes }}
+        </div>
+        <div class="d-flex justify-content-center pt-3">
+            <input type="submit" value="Submit" class="btn px-5" id="record-create-submit" />
+        </div>
+    </form>
+</div>
 
 {% endblock %}

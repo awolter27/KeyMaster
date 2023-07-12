@@ -31,6 +31,7 @@ class RecordsList(TemplateView):
 class RecordCreate(CreateView):
     model = Record
     fields = [
+        "website",
         "login_url",
         "email",
         "username",
@@ -51,6 +52,7 @@ class RecordDetail(DetailView):
 class RecordUpdate(UpdateView):
     model = Record
     fields = [
+        "website",
         "login_url",
         "email",
         "username",
