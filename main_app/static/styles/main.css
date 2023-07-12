@@ -31,19 +31,21 @@ body {
 
 #home-img-two {
     border-radius: 43% 57% 71% 29% / 40% 46% 54% 60%;
-    max-height: 300px;
+    max-height: 250px;
     max-width: auto;
 }
 
 #home-link,
 #records-list-search,
-#record-detail-link {
+#record-detail-link,
+#record-delete-link {
     background-color: rgb(252 198 170);
     color: rgb(69, 51, 103);
 }
 
 #records-list-card,
-#record-detail-card {
+#record-detail-card,
+#record-delete-card {
     width: 75%;
 }
 
@@ -54,7 +56,8 @@ body {
 
 #records-list-website,
 #record-detail-website,
-#records-list-caret {
+#records-list-caret,
+#record-delete-website {
     color: rgb(69, 51, 103);
 }
 
@@ -64,7 +67,6 @@ body {
     border-radius: 100%;
     color: rgb(69, 51, 103);
     height: 4rem;
-    margin-right: 5em;
     width: 4rem;
 }
 

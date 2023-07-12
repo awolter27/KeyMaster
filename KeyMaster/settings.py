@@ -63,8 +63,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "main_app",
+    "widget_tweaks",
     ###########################################################################################
-    # When ready, uncomment out line 68
+    # When ready, uncomment out line 69
     # "corsheaders",
     ###########################################################################################
 ]
@@ -72,13 +73,13 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     ##########################################################################################
-    # When ready, uncomment out line 76
+    # When ready, uncomment out line 77
     # "whitenoise.middleware.WhiteNoiseMiddleware",
     ###########################################################################################
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     ##########################################################################################
-    # When ready, uncomment out line 82
+    # When ready, uncomment out line 83
     # "corsheaders.middleware.CorsMiddleware",
     ###########################################################################################
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -108,7 +109,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "KeyMaster.wsgi.application"
 
 ##########################################################################################
-# When ready, uncomment out line 113
+# When ready, uncomment out line 114
 # CORS Settings
 # CORS_ORIGIN_ALLOW_ALL = True
 ###########################################################################################
@@ -125,7 +126,7 @@ DATABASES = {
 }
 
 ##########################################################################################
-# When ready, uncomment out lines 130-135
+# When ready, uncomment out lines 131-136
 # Render
 # DATABASES = {
 #     "default": dj_database_url.config(
@@ -173,7 +174,7 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "main_app/static/")]
 
 ##########################################################################################
-# When ready, uncomment out lines 177-179
+# When ready, uncomment out lines 178-180
 # if not DEBUG:
 #     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 #     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
