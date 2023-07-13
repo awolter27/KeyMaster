@@ -24,9 +24,9 @@ class Record(models.Model):
     email = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
-    security_key = models.CharField(max_length=500)
-    security_questions = models.CharField(max_length=1000)
-    notes = models.CharField(max_length=5000)
+    security_key = models.TextField(max_length=500)
+    security_questions = models.TextField(max_length=1000)
+    notes = models.TextField(max_length=5000)
     verified_record = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
