@@ -12,7 +12,7 @@
             <div class="d-flex flex-column fs-5 mb-3">
                 {{ form.website.errors }}
                 <label class="pb-3" for="{{ form.website.id_for_label }}">Website</label>
-                {% render_field form.website class="form-control text-capitalize py-2" placeholder="Google" type="text" %}
+                {% render_field form.website class="form-control py-2" placeholder="Google" type="text" %}
             </div>
             {{ form.non_field_errors }}
             <div class="d-flex flex-column fs-5 mb-3">
@@ -30,7 +30,7 @@
             <div class="d-flex flex-column fs-5 mb-3">
                 {{ form.username.errors }}
                 <label class="pb-3" for="{{ form.username.id_for_label }}">Username</label>
-                {% render_field form.username class="form-control py-2 text-capitalize" placeholder="jadler1989" type="text" %}
+                {% render_field form.username class="form-control py-2" placeholder="jadler1989" type="text" %}
             </div>
             {{ form.non_field_errors }}
             <div class="d-flex flex-column fs-5 mb-3">

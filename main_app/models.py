@@ -31,7 +31,7 @@ class Record(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "Record:" + self.login_url
+        return "Record:" + self.website
 
     class Meta:
-        ordering = ["website"]
+        ordering = [models.functions.Upper("website")]

@@ -23,8 +23,11 @@ class RecordsList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        rec = Record.objects.all()
-        context["rec"] = rec
+        # website = self.request.GET.get('website')
+        # if website != None:
+            # context['record'] = 
+        recs = Record.objects.all()
+        context["recs"] = recs
         return context
 
 
@@ -42,7 +45,6 @@ class RecordCreate(CreateView):
     ]
     template_name = "record_create.html"
     success_url = "/records/"
-
 
 class RecordDetail(DetailView):
     model = Record

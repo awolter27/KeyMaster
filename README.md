@@ -24,7 +24,6 @@ Project 4
 - I would like the search bar to encompass the entirety of the application.
 - I would like the user to be able to specify how they want their data displayed, such as list or grid.
 - I would like the user to be able to further organize their records into folders.
-- I would like the user to be able to further organize their records into folders.
 - I want the user to be notified at the strength of their passwords are.
 - I would like the user to be able to star or favorite commonly used records.
 - I would like to be able to set notifications to go off when it's time to update a password.
