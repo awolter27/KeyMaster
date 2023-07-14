@@ -1,7 +1,20 @@
 const passwordInput = document.querySelector('#passwordInput');
+const passwordGenerate = document.querySelector('.passwordGenerate');
 const passwordToggle = document.querySelector('.passwordToggle');
 
-const handleToggleInput = (e) => {
+const handleGenerate = (e) => {
+    let passwordLength = 20;
+    let passwordCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
+    let passwordGenerated = '';
+
+    for (let i = 0; i < passwordLength; i++){
+        let passwordRandom = Math.floor(Math.random() * passwordCharacters.length);
+        passwordGenerated += passwordCharacters.charAt(passwordRandom);
+    }
+    passwordInput.value = passwordGenerated;
+}
+
+const handleToggle = (e) => {
     if (passwordToggle.textContent === 'SHOW') {
         passwordToggle.textContent='HIDE';
         passwordInput.setAttribute('type', 'text');
@@ -11,5 +24,6 @@ const handleToggleInput = (e) => {
     }
 }
 
-passwordToggle.addEventListener('click', handleToggleInput);
+passwordGenerate.addEventListener('click', handleGenerate);
+passwordToggle.addEventListener('click', handleToggle);
 
