@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
+from django.db.models import Q
 from django.views import View
 from .models import Record
 
@@ -23,11 +24,11 @@ class RecordsList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # website = self.request.GET.get('website')
-        # if website != None:
-            # context['record'] = 
-        recs = Record.objects.all()
-        context["recs"] = recs
+        search = self.request.GET.get('search')
+        if search != None:
+            context['recs'] = Record.objects.filter(Q(website__icontains=search) | Q(email__icontains=search) | Q(username__icontains=search) | Q(login_url__icontains=search))
+        else:
+            context['recs'] = Record.objects.all()
         return context
 
 

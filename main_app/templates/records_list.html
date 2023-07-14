@@ -3,10 +3,11 @@
 {% block content %}
 
 <h1 class="text-center pt-3">Records</h1>
-<div class="text-center py-4">
-    <input class="rounded w-50 ps-2 pt-1 pb-2" type="text" placeholder="Search ...">
-    <button class="btn px-5" id="records-list-search" type="submit">Search</button>
-</div>
+<form class="text-center py-4" method="get">
+    <input class="rounded w-50 ps-2 py-2 mt-1 fs-5" type="text" name="search" placeholder="Search by website, URL, email or username ...">
+    <button class="btn px-5 py-2 mb-1 fs-5" id="records-list-search" type="submit">Search</button>
+    <a class="btn px-5 py-2 mb-1 fs-5" id="records-list-reset" href="{% url 'records_list' %}">Reset</a>
+</form>
 {% for record in recs %}
 <a id="records-list-link" href="{% url 'record_detail' record.pk %}">
     <div class="d-flex justify-content-center">
@@ -29,7 +30,7 @@
 </a>
 </div>
 {% empty %}
-<p>You don't seem to have any records.</p>
+<p class="text-center pt-5 pb-2 fs-5">You don't seem to have any records.</p>
 {% endfor %}
 <div class="text-center pt-4 pb-5">
     <a href="{% url 'record_create' %}" class="btn btn-primary fs-2 fw-bold" id="records-list-btn" role="button">+</a>
