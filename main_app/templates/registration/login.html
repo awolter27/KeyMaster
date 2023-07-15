@@ -1,0 +1,12 @@
+{% extends 'basewonav.html' %}
+{% block title %}Log In{% endblock %}
+{% block content %}
+
+<h1 class="text-center py-5">Log In</h1>
+<form method="post" action="{% url 'login' %}" class="text-center">
+    {% csrf_token %} {{ form.as_p }}
+    <input type="submit" class="btn" id="login-submit" value="Login" />
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}

@@ -73,6 +73,7 @@ body {
     width: 4rem;
 }
 
+#login-submit,
 #record-create-submit {
     background-color: rgb(252 198 170);
     border-color: rgb(252 198 170);
