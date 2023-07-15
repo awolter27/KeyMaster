@@ -36,6 +36,7 @@ body {
 }
 
 #home-link,
+.signup,
 #records-list-search,
 #records-list-reset,
 #record-detail-link,
@@ -60,7 +61,10 @@ body {
 #records-list-website,
 #record-detail-website,
 #records-list-caret,
-#record-delete-website {
+#record-delete-website,
+.passwordGenerate,
+.passwordToggle,
+label {
     color: rgb(69, 51, 103);
 }
 
@@ -73,6 +77,7 @@ body {
     width: 4rem;
 }
 
+#login-submit,
 #record-create-submit {
     background-color: rgb(252 198 170);
     border-color: rgb(252 198 170);

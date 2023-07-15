@@ -121,7 +121,7 @@ WSGI_APPLICATION = "KeyMaster.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "KeyMaster",
+        "NAME": "keymaster",
     }
 }
 
@@ -184,3 +184,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "main_app/static/")]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = '/records/'
+LOGOUT_REDIRECT_URL = '/'
