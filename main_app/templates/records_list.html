@@ -5,8 +5,8 @@
 <h1 class="text-center pt-3">Records</h1>
 <form class="text-center py-4" method="get">
     <input class="rounded w-50 ps-2 py-2 mt-1" type="text" name="search" placeholder="Search by website, URL, email or username ...">
-    <button class="btn px-3 py-2 mb-1" id="records-list-search" type="submit">Search</button>
-    <a class="btn px-3 py-2 mb-1" id="records-list-reset" href="{% url 'records_list' %}">Reset</a>
+    <button class="btn px-3 py-2 mb-1" id="records-list-link" type="submit">Search</button>
+    <a class="btn px-3 py-2 mb-1" id="records-list-link" href="{% url 'records_list' %}">Reset</a>
 </form>
 {% for record in recs %}
 <a id="records-list-link" href="{% url 'record_detail' record.pk %}">

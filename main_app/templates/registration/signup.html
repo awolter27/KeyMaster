@@ -4,12 +4,13 @@
 
 <h1 class="text-center pt-5 pb-3">Sign Up</h1>
 <div class="d-flex justify-content-center mb-5">
-    <div class="card my-3" id="record-detail-card">
+    <div class="card my-3" id="signup-card">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
             <form method="post" action="{% url 'signup' %}" class="w-75">
-                {% csrf_token %} {{ form.as_p }}
+                {% csrf_token %} 
+                {{ form.as_p }}
                 <div class="d-flex justify-content-center">
-                    <input type="submit" class="btn mt-2 mb-3 signup" value="Sign Up" />
+                    <input type="submit" value="Sign Up" class="btn mt-2 mb-3" id="signup-link"/>
                     <input type="hidden" name="next" value="{{ next }}" />
                 </div>
             </form>

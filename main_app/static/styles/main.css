@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
 
@@ -8,16 +8,16 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+#nav-key,
+#home-key {
+    max-height: 50px;
+    max-width: 100px;
+}
+
 #nav-brand {
     color: white;
     cursor: pointer;
     font-family: 'Bruno Ace', cursive;
-}
-
-#nav-img,
-#home-img-one {
-    max-height: 50px;
-    max-width: 100px;
 }
 
 .navbar-nav .nav-item:hover .nav-link {
@@ -29,41 +29,32 @@ body {
     font-family: 'Bruno Ace', cursive;
 }
 
-#home-img-two {
+#home-key-master {
     border-radius: 43% 57% 71% 29% / 40% 46% 54% 60%;
     max-height: 250px;
     max-width: auto;
 }
 
 #home-link,
-.signup,
-#records-list-search,
-#records-list-reset,
+#signup-link,
+#records-list-link,
 #record-detail-link,
 #record-create-link,
 #record-update-link,
 #record-delete-link {
     background-color: rgb(252 198 170);
+    border-color: rgb(252 198 170);
     color: rgb(69, 51, 103);
-}
-
-#records-list-card,
-#record-detail-card,
-#record-delete-card {
-    width: 85%;
-}
-
-#records-list-link {
     cursor: pointer;
     text-decoration: none;
 }
 
 #records-list-website,
-#record-detail-website,
 #records-list-caret,
+#record-detail-website,
 #record-delete-website,
-.passwordGenerate,
-.passwordToggle,
+#passwordGenerate,
+#passwordToggle,
 label {
     color: rgb(69, 51, 103);
 }
@@ -77,6 +68,14 @@ label {
     width: 4rem;
 }
 
+#signup-card,
+#login-card,
+#records-list-card,
+#record-detail-card,
+#record-delete-card {
+    width: 85%;
+}
+
 #login-submit,
 #record-create-submit {
     background-color: rgb(252 198 170);
@@ -84,14 +83,14 @@ label {
     color: rgb(69, 51, 103);
 }
 
-.passwordGenerate,
-.passwordToggle {
+#passwordGenerate,
+#passwordToggle {
     cursor: pointer;
     transition: all;
 }
 
-.passwordGenerate:hover,
-.passwordToggle:hover {
+#passwordGenerate:hover,
+#passwordToggle:hover {
     font-size: 1em;
     font-weight: 400;
 }

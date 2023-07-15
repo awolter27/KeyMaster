@@ -40,10 +40,10 @@
                     <label class="pb-3" for="{{ form.password.id_for_label }}">Password</label>
                     {% render_field form.password class="form-control py-2 text-break border border-dark" id="passwordInput" placeholder="dE4@^kSeka#55" type="password" %}
                     <div class="d-flex justify-content-between">
-                        <div class="form-text text-end passwordGenerate">
+                        <div class="form-text text-end" id="passwordGenerate">
                             GENERATE
                         </div>
-                        <div class="form-text text-end passwordToggle">
+                        <div class="form-text text-end" id="passwordToggle">
                             SHOW
                         </div>
                     </div>
