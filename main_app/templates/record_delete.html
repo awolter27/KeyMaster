@@ -19,15 +19,15 @@
                 <p class="fs-5">Password</p>
                 <p class="text-secondary">{{record.password}}</p>
                 <p class="fs-5">Security Key</p>
-                <p class="text-secondary text-break">{{record.security_key}}</p>
+                <p class="text-break text-secondary">{{record.security_key}}</p>
                 <p class="fs-5">Security Questions</p>
-                <p class="text-secondary text-break">{{record.security_questions}}</p>
+                <p class="text-break text-secondary">{{record.security_questions}}</p>
                 <p class="fs-5">Notes</p>
-                <p class="text-secondary text-break">{{record.notes}}</p>
+                <p class="text-break text-secondary">{{record.notes}}</p>
                 <form method="post" class="text-center">
                     {% csrf_token %}
                     <div class="py-4">
-                        <input class="btn btn-danger px-3 me-3" type="submit" value="DELETE" />
+                        <input type="submit" value="DELETE" class="btn btn-danger px-3 me-3" />
                         <a href="{% url 'record_detail' record.pk %}" class="btn px-3 ms-3" id="record-delete-link">Back</a>
                     </div>
                 </form>

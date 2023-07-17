@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-&s8_p8gnk+3v&pt)3)51w#&mf@e!gf7&n*jqoo!f23*m7s&r*w"
 
 ###########################################################################################
-# When ready, delete line 30 and uncomment out lines 33-36. You may need to edit default="".
+# When ready, delete lines 29-30 and uncomment out lines 34-36. You may need to edit default="".
 # SECRET_KEY = os.environ.get(
 #     "SECRET_KEY", default="django-insecure-&s8_p8gnk+3v&pt)3)51w#&mf@e!gf7&n*jqoo!f23*m7s&r*w"
 # )
@@ -185,5 +185,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "main_app/static/")]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = '/records/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/records/"
+LOGOUT_REDIRECT_URL = "/"

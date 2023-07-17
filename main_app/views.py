@@ -1,13 +1,13 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth import login
+from django.urls import reverse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
 from django.db.models import Q
 from django.views import View
-from django.urls import reverse
 from .models import Record
-from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
 
 
 class Home(TemplateView):
@@ -70,7 +70,6 @@ class RecordCreate(CreateView):
         return super(RecordCreate, self).form_valid(form)
 
     def get_success_url(self):
-        print(self.kwargs)
         return reverse("record_detail", kwargs={"pk": self.object.pk})
 
 

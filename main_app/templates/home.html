@@ -3,19 +3,21 @@
 {% block content %}
 
 <div class="d-flex flex-row justify-content-center pt-5">
-    <img id="home-img-one" src="https://i.imgur.com/FHlV6Ia.png" alt="KeyMaster Logo">
-    <h1 class="fs-2 ms-3" id="home-logo">KeyMaster</h1>
+    <img src="https://i.imgur.com/FHlV6Ia.png" alt="KeyMaster Logo" id="home-key">
+    <h1 class="ms-3 fs-2" id="home-logo">KeyMaster</h1>
 </div>
 <div class="d-flex flex-row justify-content-center pt-4">
-    <img id="home-img-two" src="https://i.imgur.com/m3UpI78.png" alt="KeyMaster Logo">
+    <img src="https://i.imgur.com/m3UpI78.png" alt="KeyMaster Logo" id="home-key-master">
 </div>
-<h1 class="text-center pt-4">Welcome to KeyMaster</h1>
+<h1 class="pt-4 text-center">Welcome to KeyMaster</h1>
 <div class="d-flex justify-content-center">
-    <p class="w-75 text-center pt-3">KeyMaster is a password management solution designed to help users maintain strong and unique passwords across multiple platforms. It securely stores passwords in a centralized location, generates complex passwords, and offers a user-friendly interface to enhance online security.</p>
+    <p class="w-75 pt-3 text-center">KeyMaster is a password management solution designed to help users maintain strong
+        and unique passwords across multiple platforms. It securely stores passwords in a centralized location,
+        generates complex passwords, and offers a user-friendly interface to enhance online security.</p>
 </div>
 <div class="d-flex flex-column align-items-center w-60 pt-3">
-    <a class="btn px-3 mb-3" id="home-link" href="/accounts/signup/">Create New Account</a>
-    <a class="btn px-3" id="home-link" href="/accounts/login/">Log In</a>
+    <a href="/accounts/signup/" class="btn px-3 mb-3" id="home-link">Create New Account</a>
+    <a href="/accounts/login/" class="btn px-3" id="home-link">Log In</a>
 </div>
 
 {% endblock %}
