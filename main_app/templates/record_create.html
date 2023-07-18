@@ -20,7 +20,7 @@
                 <div class="d-flex flex-column mb-3 fs-5">
                     {{ form.login_url.errors }}
                     <label for="{{ form.login_url.id_for_label }}" class="pb-3">URL</label>
-                    {% render_field form.login_url placeholder="https://www.google.com" type="text" %}
+                    {% render_field form.login_url placeholder="https://www.google.com" type="text" class="form-control border border-dark py-2 text-break" %}
                 </div>
                 {{ form.non_field_errors }}
                 <div class="d-flex flex-column mb-3 fs-5">

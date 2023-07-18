@@ -27,31 +27,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-&s8_p8gnk+3v&pt)3)51w#&mf@e!gf7&n*jqoo!f23*m7s&r*w"
-
-###########################################################################################
-# When ready, delete lines 29-30 and uncomment out lines 34-36. You may need to edit default="".
-# SECRET_KEY = os.environ.get(
-#     "SECRET_KEY", default="django-insecure-&s8_p8gnk+3v&pt)3)51w#&mf@e!gf7&n*jqoo!f23*m7s&r*w"
-# )
-###########################################################################################
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY", default=""
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-###########################################################################################
-# When ready, delete line 40 and uncomment out line 44.
-# DEBUG = "RENDER" not in os.environ
-###########################################################################################
+# DEBUG = True
+DEBUG = "RENDER" not in os.environ
 
 ALLOWED_HOSTS = []
 
-###########################################################################################
-# When ready, uncomment out lines 51-53
-# RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-# if RENDER_EXTERNAL_HOSTNAME:
-#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-###########################################################################################
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -72,10 +60,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    ##########################################################################################
-    # When ready, uncomment out line 77
-    # "whitenoise.middleware.WhiteNoiseMiddleware",
-    ###########################################################################################
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     ##########################################################################################
@@ -117,24 +102,42 @@ WSGI_APPLICATION = "KeyMaster.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# Local Host
+# Local Host DB Dictionary
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "keymaster",
+#     }
+# }
+
+# To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
+# Neon DB Dictionary
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "keymaster",
+#         "USER": os.environ["DB_USER"],
+#         "PASSWORD": os.environ["DB_PW"],
+#         "HOST": os.environ["DB_HOST"],
+#         "PORT": "5432",
+#     }
+# }
+
+# Render from my deployed mini-project
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "keymaster",
-    }
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
-##########################################################################################
-# When ready, uncomment out lines 131-136
-# Render
+# Render from Render
 # DATABASES = {
-#     "default": dj_database_url.config(
-#         conn_max_age=600,
-#         conn_health_checks=True,
+#     'default': dj_database_url.config(
+#         default='postgres://awolter27:<password>@ep-delicate-river-630733-pooler.us-east-2.aws.neon.tech/keymaster',
+#         conn_max_age=600
 #     )
 # }
-##########################################################################################
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -173,12 +176,9 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "main_app/static/")]
 
-##########################################################################################
-# When ready, uncomment out lines 178-180
-# if not DEBUG:
-#     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-#     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-##########################################################################################
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

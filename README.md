@@ -53,5 +53,3 @@ Project 4
 
 ## Initial ERD
 ![Screenshot 2023-07-08 at 2 07 01 PM](https://github.com/awolter27/KeyMaster/assets/123532540/f032abe7-2d4e-47e5-abed-abadf6c5eac2)
-
-
