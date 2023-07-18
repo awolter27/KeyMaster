@@ -52,10 +52,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "main_app",
     "widget_tweaks",
-    ###########################################################################################
-    # When ready, uncomment out line 69
-    # "corsheaders",
-    ###########################################################################################
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -63,10 +60,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    ##########################################################################################
-    # When ready, uncomment out line 83
-    # "corsheaders.middleware.CorsMiddleware",
-    ###########################################################################################
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -93,11 +87,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "KeyMaster.wsgi.application"
 
-##########################################################################################
-# When ready, uncomment out line 114
 # CORS Settings
-# CORS_ORIGIN_ALLOW_ALL = True
-###########################################################################################
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
