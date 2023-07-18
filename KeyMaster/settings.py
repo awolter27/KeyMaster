@@ -187,3 +187,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "/records/"
 LOGOUT_REDIRECT_URL = "/"
+
+# "pip freeze" shows the packages you've installed in your pip virtual environment
+# pip freeze
+
+# "pipenv install Django" guarantees packages and dependencies will be installed in your virtual environment which makes sue versions will not clash between different projects
+# pipenv install Django
+
+# "pip freeze > deps.txt" ecords an environment's current package list into deps.txt.
+# pip freeze > deps.txt 
