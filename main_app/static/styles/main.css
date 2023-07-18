@@ -49,6 +49,9 @@ body {
     text-decoration: none;
 }
 
+#signup-heading,
+#login-heading,
+#login-text,
 #records-list-website,
 #records-list-caret,
 #record-detail-website,
