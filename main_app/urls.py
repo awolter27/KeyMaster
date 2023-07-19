@@ -9,4 +9,5 @@ urlpatterns = [
     path("record/<int:pk>/", views.RecordDetail.as_view(), name="record_detail"),
     path("record/<int:pk>/update/", views.RecordUpdate.as_view(), name="record_update"),
     path("record/<int:pk>/delete/", views.RecordDelete.as_view(), name="record_delete"),
+    path("logout", views.logout_view, name= "logout"),
 ]
