@@ -103,24 +103,24 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
 # Neon DB Dictionary
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "keymaster",
-        "USER": os.environ["DB_USER"],
-        "PASSWORD": os.environ["DB_PW"],
-        "HOST": os.environ["DB_HOST"],
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "keymaster",
+#         "USER": os.environ["DB_USER"],
+#         "PASSWORD": os.environ["DB_PW"],
+#         "HOST": os.environ["DB_HOST"],
+#         "PORT": "5432",
+#     }
+# }
 
 # Render from my deployed mini-project
-# DATABASES = {
-#     "default": dj_database_url.config(
-#         conn_max_age=600,
-#         conn_health_checks=True,
-#     )
-# }
+DATABASES = {
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
+}
 
 # Render from Render
 # DATABASES = {
