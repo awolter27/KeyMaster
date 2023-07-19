@@ -8,6 +8,10 @@ from django.views.generic import DetailView
 from django.db.models import Q
 from django.views import View
 from .models import Record
+from .forms import SignUpForm
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth import logout
 
 
 class Home(TemplateView):
@@ -16,21 +20,27 @@ class Home(TemplateView):
 
 class SignUp(View):
     def get(self, request):
-        form = UserCreationForm()
-        context = {"form": form}
+        form_class = SignUpForm
+        context = {"form": form_class}
         return render(request, "registration/signup.html", context)
 
     def post(self, request):
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
+        form_class = SignUpForm(request.POST)
+        if form_class.is_valid():
+            user = form_class.save()
             login(request, user)
             return redirect("records_list")
         else:
-            context = {"form": form}
+            context = {"form": form_class}
             return render(request, "registration/signup.html", context)
 
 
+def logout_view(request):
+    logout(request)
+    return redirect("home")
+
+
+@method_decorator(login_required, name="dispatch")
 class RecordsList(TemplateView):
     template_name = "records_list.html"
 
@@ -50,6 +60,7 @@ class RecordsList(TemplateView):
         return context
 
 
+@method_decorator(login_required, name="dispatch")
 class RecordCreate(CreateView):
     model = Record
     fields = [
@@ -73,11 +84,13 @@ class RecordCreate(CreateView):
         return reverse("record_detail", kwargs={"pk": self.object.pk})
 
 
+@method_decorator(login_required, name="dispatch")
 class RecordDetail(DetailView):
     model = Record
     template_name = "record_detail.html"
 
 
+@method_decorator(login_required, name="dispatch")
 class RecordUpdate(UpdateView):
     model = Record
     fields = [
@@ -94,6 +107,7 @@ class RecordUpdate(UpdateView):
     success_url = "/records/"
 
 
+@method_decorator(login_required, name="dispatch")
 class RecordDelete(DeleteView):
     model = Record
     template_name = "record_delete.html"
