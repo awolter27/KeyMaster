@@ -11,7 +11,7 @@ Project 4
 - As a user, I want to store and manage my passwords in one centralized location.
 - As a user, I want to be able to store all associated information about an account, such as my email, username, password, security questions, security key, etc., in one record.
 - As a user, I want to be able to add, edit, and delete records.
-- As a user, I want the ability to search all my records by website, email, username, or password.
+- As a user, I want the ability to search all my records by website, URL, email, or username.
 - As a user, I want my records organized alphabetically.
 - As a user, I want to be able to generate complex and unique passwords.
 - As a user, I expect my private data to be secure and protected.
@@ -21,7 +21,6 @@ Project 4
 
 ## Stretch Goals
 - I want the user to be able to customize their random password generator. For example, if the user wants a password with letters, numbers, symbols, and a length of 15 characters, they should be able to specify this.
-- I would like the search bar to encompass the entirety of the application.
 - I would like the user to be able to specify how they want their data displayed, such as list or grid.
 - I would like the user to be able to further organize their records into folders.
 - I want the user to be notified at the strength of their passwords are.
